@@ -1,0 +1,25 @@
+addcurrency GBP £ 1.10
+loadcsv amazon_co-ecommerce_cleaned.csv
+setstorecurrency GBP
+savestore test2_backup.bin
+addiscount FIXED 1 "Enjoy the bonus"
+listdiscounts
+addiscount PERCENTAGE 20 "Summer Sale"
+addcurrency USD $ 0.82
+calculatetotal 5c76389a8c302c6d7d6e179393031b97 0ca63377ca8015e585efa1d418f04756
+setstorecurrency USD
+listdiscounts
+applydiscount FIXED 1
+applydiscount PERCENTAGE 20
+listproducts
+calculatetotal 81b3ad5c07a31fa67e4dc8643afa3275 fa13bf1bd4a3a98b990a4ee64dcf6eca ab9fe33566df86b90c82ed78e38e08c7
+updateparity USD 0.9
+calculatetotal
+getstorecurrency
+listcurrencies
+listproductsbymanufacturer LEGO
+listmanufacturers
+savecsv test2_modified_store.csv
+loadstore test2_backup.bin
+savecsv test2_initial_store.csv
+exit
